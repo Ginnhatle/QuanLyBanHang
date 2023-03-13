@@ -10,7 +10,7 @@ const ProductProvider = ({children}) => {
             setProducts(data);
         }
         fetchProducts();
-    }, [])
+    }, []);
     return (<ProductContext.Provider value={products}>
         {children}
     </ProductContext.Provider>)

@@ -25,12 +25,12 @@ const CartItem = ({item}) => {
                 <div className={' flex gap-x-2 h-[36px] text-sm'}>
                     <div className={'flex flex-1 max-w-[100px] items-center h-full border text-primary font-medium'}>
                         <div onClick={() => decreaseAmount(id)}
-                             className={'flex-1 flex justify-center items-center cursor-pointer bg-red-500 h-full'}>
+                             className={'flex-1 flex justify-center items-center cursor-pointer  h-full'}>
                             <IoMdRemove/>
                         </div>
                         <div className={'h-full flex justify-center items-center cursor-pointer'}>{amount}</div>
                         <div onClick={() => inCeaseAmount(id)}
-                             className={'flex-1 h-full flex justify-center items-center cursor-pointer'}>
+                             className={'flex-1 h-full flex justify-center items-center cursor-pointer h-full'}>
                             <IoMdAdd/>
                         </div>
                     </div>
