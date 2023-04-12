@@ -1,9 +1,9 @@
 import React from 'react';
-import ImgHeader from '../img/woman_hero.png'
+import ImgHeader from '../img/zyro.png'
 import {Link} from "react-router-dom";
 
 const Hero = () => {
-    return <section className={'h-[800px] bg-hero bg-cover bg-no-repeat bg-center py-24'}>
+    return <section className={'h-[800px] bg-header bg-cover bg-no-repeat bg-center py-24'}>
         <div className="container mx-auto flex justify-around h-full">
             <div className={'flex flex-col justify-center'}>
                 <div className={'font-semibold flex items-center uppercase'}>
