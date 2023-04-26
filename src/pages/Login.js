@@ -16,15 +16,15 @@ export const Login = () => {
         }
     }
     let login = () => {
-        const myHeaders = new Headers();
-        myHeaders.append("Context-Type","Application/x-www-form-urlencoded");
-        const urlencoded = new URLSearchParams();
-        urlencoded.append("username", username);
-        urlencoded.append("password", password);
         const requestOptions={
             method:'POST',
-            // header: myHeaders,
-            body:urlencoded,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body:JSON.stringify({
+                username: username,
+                password: password
+            }),
             redirect:'follow'
         };
         fetch('http://localhost:3030/mv-core/v1/auth/login',requestOptions)
