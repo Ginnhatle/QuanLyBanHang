@@ -3,6 +3,8 @@ import {ProductContext} from "../contexts/ProductContext";
 import Product from "../components/Product";
 import Hero from "../components/Hero";
 import ProductService from "../service/ProductService";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Home = () => {
     const products = useContext(ProductContext);
@@ -12,6 +14,8 @@ const Home = () => {
         );
     });
     return <div>
+        <Header/>
+
         <Hero/>
         <section className={'py-16'}>
             <div className="container mx-auto">
@@ -25,6 +29,8 @@ const Home = () => {
                 </div>
             </div>
         </section>
+        <Footer/>
+
     </div>;
 };
 
