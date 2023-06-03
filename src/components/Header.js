@@ -4,6 +4,7 @@ import {BsBag} from "@react-icons/all-files/bs/BsBag";
 import {CartContext} from "../contexts/CartContext";
 import {Link} from "react-router-dom";
 import Logo from '../img/logo.svg'
+import AuthService from "../service/auth.service";
 
 const Header = () => {
     const [isActive, setIsActive] = useState(false);
@@ -14,6 +15,18 @@ const Header = () => {
             window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
         })
     })
+    const [currentUser, setCurrentUser] = useState(undefined);
+
+    useEffect(() => {
+        const user = AuthService.getCurrentUser();
+        if (user) {
+            setCurrentUser(user);
+        }
+    }, []);
+
+    const logOut = () => {
+        AuthService.logout();
+    };
     return (
         <header
             className={`${isActive ? 'bg-white py-4 shadow-md' : 'bg-none py-6 '}
@@ -31,6 +44,15 @@ const Header = () => {
                         'w-[18px] h-[18px] text-white rounded-full flex justify-center items-center'}>
                         {itemAmount}</div>
                 </div>
+                {currentUser ? (
+                        <div className="navbar-nav ms-auto">
+                            <li className="nav-item">
+                                <a href="/" className="nav-link" onClick={logOut}>
+                                    Logout
+                                </a>
+                            </li>
+                        </div>
+                    ):""}
             </div>
 
         </header>
