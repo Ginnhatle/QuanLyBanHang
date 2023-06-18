@@ -4,7 +4,7 @@ import AuthService from "./auth.service";
 import { useNavigate } from "react-router-dom";
 
 const instance = axios.create({
-  baseURL: "http://localhost:3030/mv-core/v1",
+  baseURL: "http://13.54.43.177:3030/mv-core/v1",
   headers: {
     "Content-Type": "application/json",
   },

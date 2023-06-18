@@ -27,13 +27,13 @@ const App = () => {
             <Router>
                 <Routes>
                     <Route path={'/'} element={<Login/>}/>
-                    {/*{currentUser?*/}
+                    {currentUser?
                         <Route path={'/home'} element={<Home/>}/>
-                    {/*:("")*/}
+                    :("")
                     }
-                    {/*{currentUser?*/}
+                    {currentUser?
                         <Route path={'/product/:id'} element={<ProductDetails/>}/>
-                    {/*:("")*/}
+                    :("")
                     }
                 </Routes>
                 <Sidebar/>
